@@ -6,13 +6,28 @@
 
 import java.io.File;                    //For file I/O
 import java.io.FileNotFoundException;   //File I/O
+import java.io.IOException;             //File I/O
 import java.util.ArrayList;             //Flexible data
 import java.util.Scanner;               //For reading in from files
 
 public class Main {
 
-    public static void displayInfo() {
-        //
+    public static void displayInfo(Scanner file) throws IOException {
+        ArrayList<String> names = new ArrayList<String>();
+        ArrayList<Integer> costs = new ArrayList<Integer>();
+        String title = file.nextLine();
+        String name = file.next();
+        Integer cost = new Integer(-1);
+        while (!name.equals("end")) {
+            cost = new Integer(file.next());
+            names.add(name);
+            costs.add(cost);
+            name = file.next();
+        }
+
+        printFile(title, costs.get(0).intValue(), costs.get(1).intValue(), costs.get(2).intValue(), costs.get(3).intValue(), costs.get(4).intValue(), costs.get(5).intValue()); //Print contents of the file to the console
+
+        printExpenses(costs.get(0).intValue(), costs.get(1).intValue(), costs.get(2).intValue(), costs.get(3).intValue(), costs.get(4).intValue(), costs.get(5).intValue()); //Print expenses to the console
     }
 
     /**Prints the content of the input file to the console.
@@ -123,35 +138,12 @@ public class Main {
             System.exit(0);
         }
 
-        //Variables to read from the input file
-        String title = null;
-        int grossIncome = -1;
-        int taxBracket = -1;
-        int tithe = -1;
-        int rent = -1;
-        int food = -1;
-        int gas = -1;
-
         try {
-            //Read in values 
-            title = file.nextLine();
-            grossIncome = file.nextInt();
-            taxBracket = file.nextInt();
-            tithe = file.nextInt();
-            rent = file.nextInt();
-            food = file.nextInt();
-            gas = file.nextInt();
-            
-        } catch (Exception e) {
-            System.out.println("Bad input from file " + inputFile);
+            displayInfo(file);
+        } catch (IOException e) {
+            System.out.println("Bad input.");
             System.exit(0);
         }
-
-        printFile(title, grossIncome, taxBracket, tithe, rent, food, gas);
-
-        printExpenses(grossIncome, taxBracket, tithe, rent, food, gas);
-
-        printSubscriptions();
 
         endProgram(file, startTime);
     }
