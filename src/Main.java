@@ -12,6 +12,10 @@ import java.util.Scanner;               //For reading in from files
 
 public class Main {
 
+    /**Prints the contents of the file and expenses to the console
+     * 
+     * @param file
+     */
     public static void displayInfo(Scanner file) throws IOException {
         ArrayList<String> names = new ArrayList<String>();
         ArrayList<Integer> costs = new ArrayList<Integer>();
@@ -25,9 +29,11 @@ public class Main {
             name = file.next();
         }
 
-        printFile(title, costs.get(0).intValue(), costs.get(1).intValue(), costs.get(2).intValue(), costs.get(3).intValue(), costs.get(4).intValue(), costs.get(5).intValue()); //Print contents of the file to the console
-
-        printExpenses(costs.get(0).intValue(), costs.get(1).intValue(), costs.get(2).intValue(), costs.get(3).intValue(), costs.get(4).intValue(), costs.get(5).intValue()); //Print expenses to the console
+        //Print contents of the file to the console
+        printFile(title, costs.get(0).intValue(), costs.get(1).intValue(), costs.get(2).intValue(), costs.get(3).intValue(), costs.get(4).intValue(), costs.get(5).intValue());
+        
+        //Print expenses to the console
+        printExpenses(costs.get(0).intValue(), costs.get(1).intValue(), costs.get(2).intValue(), costs.get(3).intValue(), costs.get(4).intValue(), costs.get(5).intValue());
     }
 
     /**Prints the content of the input file to the console.

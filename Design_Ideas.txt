@@ -1,0 +1,4 @@
+Design Ideas
+Instead of hard coding the tithe, then rent, then etc. Make it a method that prints a value
+to the console with the name of the expense and the total and amount to be subtracted passed
+into the method.
