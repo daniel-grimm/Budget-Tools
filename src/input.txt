@@ -5,3 +5,7 @@ May 2019 Budget
 750
 60
 20
+Amazon 10.83
+Slacker 9.99
+Lastpass 3
+PIA 6
