@@ -2,10 +2,10 @@ May 2019 Budget
 Income 5600
 Tax 22
 Tithe 10
+Investment/Savings 15
 Rent 750
 Food 60
 Gas 20
-end
 Amazon 10.83
 Slacker 9.99
 Lastpass 3
