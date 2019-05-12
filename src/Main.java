@@ -105,6 +105,7 @@ public class Main {
             System.out.println(" = $" + total + "\n");
         }
 
+        //Print out meta statistics
         System.out.println("Extra money: $" + total + "\n");
         System.out.println("Total expenses: $" + Math.round(grossIncome - total) + "\n");
     }
