@@ -48,6 +48,15 @@ public class Main {
         printData(title, expenses, costs);
     }
 
+    private static double printPercents(String expense, double percent, double grossIncome, double total) {
+        System.out.println(expense + ": " + percent + "%");
+        double minusValue = Calculator.percentOf(grossIncome, percent);
+        System.out.print("\t$" + total + " - $" + minusValue);
+        total -= minusValue;
+        System.out.println(" = $" + total + "\n");
+        return total;
+    }
+
     /**This method prints the results of the file to the console.
      * The first four lines are expected to be:
      * Monthly Income
@@ -65,7 +74,23 @@ public class Main {
         System.out.println("\n" + title);
         System.out.println("\nGenerating Budget:\n");
 
-        System.out.println(expenses.get(0) + ": $" + cost.get(0));
+        double total = cost.get(0).doubleValue();
+        double grossIncome = total;
+
+        System.out.println(expenses.get(0) + ": $" + cost.get(0) + "\n");
+
+        //Print tax deductions
+        total = printPercents(expenses.get(1), cost.get(1), grossIncome, total);
+
+        //Print tithe deductions
+        total = printPercents(expenses.get(2), cost.get(2), grossIncome, total);
+
+        //Print investments/savings deductions
+        total = printPercents(expenses.get(3), cost.get(3), grossIncome, total);
+
+        for (int i = 1; i < expenses.size(); i++) {
+            //Subtract everything that is not tithe, tax, savings.
+        }
     }
     
     /**Closes sytem resources and prints runtime information.
