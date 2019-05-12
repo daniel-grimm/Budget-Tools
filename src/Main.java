@@ -32,7 +32,7 @@ public class Main {
      * 
      * @param file
      */
-    public static void displayInfo(Scanner file) throws IOException {
+    private static void displayInfo(Scanner file) throws IOException {
         ArrayList<String> expenses = new ArrayList<String>();   //Title of each expense
         ArrayList<Double> costs = new ArrayList<Double>();      //Cost of each expense (Cost per month)
         String title = file.nextLine();
@@ -66,7 +66,7 @@ public class Main {
     }
 
     /**This method prints the results of the file to the console.
-     * The first four lines are expected to be:
+     * The first four lines of the input file are expected to be:
      * Monthly Income
      * Tax Percent
      * Tithe Percent
@@ -78,13 +78,14 @@ public class Main {
      * @param expenses
      * @param cost
      */
-    public static void printData(String title, ArrayList<String> expenses, ArrayList<Double> cost) {
+    private static void printData(String title, ArrayList<String> expenses, ArrayList<Double> cost) {
         System.out.println("\n" + title);
         System.out.println("\nGenerating Budget:\n");
 
         double total = cost.get(0).doubleValue();
         double grossIncome = total;
 
+        //Print monthly
         System.out.println(expenses.get(0) + ": $" + cost.get(0) + "\n");
 
         //Print tax deductions
@@ -104,7 +105,8 @@ public class Main {
             System.out.println(" = $" + total + "\n");
         }
 
-        System.out.println("Extra money: $" + total);
+        System.out.println("Extra money: $" + total + "\n");
+        System.out.println("Total expenses: $" + Math.round(grossIncome - total) + "\n");
     }
     
     /**Closes sytem resources and prints runtime information.
@@ -112,7 +114,7 @@ public class Main {
      * @param file
      * @param startTime
      */
-    public static void endProgram(Scanner file, long startTime) {
+    private static void endProgram(Scanner file, long startTime) {
         //End of program, close resources
         file.close();
         long endTime = System.currentTimeMillis();
@@ -125,7 +127,7 @@ public class Main {
      * 
      * @param args
      */
-    public static void run(String[] args) {
+    private static void run(String[] args) {
         //Timer
         long startTime = System.currentTimeMillis();
 
