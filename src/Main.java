@@ -48,6 +48,14 @@ public class Main {
         printData(title, expenses, costs);
     }
 
+    /**Displays the deductions for monthly expenses that are deducted by percent.
+     * 
+     * @param expense
+     * @param percent
+     * @param grossIncome
+     * @param total
+     * @return
+     */
     private static double printPercents(String expense, double percent, double grossIncome, double total) {
         System.out.println(expense + ": " + percent + "%");
         double minusValue = Calculator.percentOf(grossIncome, percent);
@@ -88,9 +96,15 @@ public class Main {
         //Print investments/savings deductions
         total = printPercents(expenses.get(3), cost.get(3), grossIncome, total);
 
-        for (int i = 1; i < expenses.size(); i++) {
-            //Subtract everything that is not tithe, tax, savings.
+        //Subtract everything that is not a percent deduction
+        for (int i = 4; i < expenses.size(); i++) {
+            System.out.println(expenses.get(i) + ": $" + cost.get(i));
+            System.out.print("\t$" + total + " - $" + cost.get(i));
+            total -= cost.get(i);
+            System.out.println(" = $" + total + "\n");
         }
+
+        System.out.println("Extra money: $" + total);
     }
     
     /**Closes sytem resources and prints runtime information.
