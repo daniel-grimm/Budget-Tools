@@ -6,7 +6,10 @@ Investment/Savings 15
 Rent 750
 Insurance 155
 Food 240
-Gas 80
+Gas 100
+Haircut 20
+Car_Wash 10
+Clothing 30
 Amazon 10.83
 Slacker 9.99
 Lastpass 3
