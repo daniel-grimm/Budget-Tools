@@ -65,6 +65,21 @@ public class Main {
         return total;
     }
 
+    /**This method prints out the final results of the program.
+     * 
+     * @param grossIncome
+     * @param total
+     */
+    private static void finalOutput(double grossIncome, double total) {
+        //Print out total statistics
+        System.out.println("Extra money: $" + total + "\n");
+        double expenses = Math.round(grossIncome - total);
+        System.out.println("Total expenses: $" + expenses + "\n");
+
+        System.out.println("Expenses per week: $" + (expenses / 4) + "\n");
+        System.out.println("Spending money per week: $" + (total / 4) + "\n");
+    }
+
     /**This method prints the results of the file to the console.
      * The first four lines of the input file are expected to be:
      * Monthly Income
@@ -105,9 +120,10 @@ public class Main {
             System.out.println(" = $" + total + "\n");
         }
 
+        finalOutput(grossIncome, total);
         //Print out meta statistics
-        System.out.println("Extra money: $" + total + "\n");
-        System.out.println("Total expenses: $" + Math.round(grossIncome - total) + "\n");
+        // System.out.println("Extra money: $" + total + "\n");
+        // System.out.println("Total expenses: $" + Math.round(grossIncome - total) + "\n");
     }
     
     /**Closes sytem resources and prints runtime information.
