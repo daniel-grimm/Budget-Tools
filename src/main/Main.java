@@ -151,6 +151,7 @@ public class Main {
         //Get the input text file
         String inputFile = null;
         
+        //No file
         try {
             inputFile = args[0];
         } catch (Exception e) {
@@ -158,16 +159,22 @@ public class Main {
             System.exit(0);
         }
 
-        System.out.println("Reading from file " + inputFile + "\n");
+        //initialize variables for later
         Scanner file = null;
+        File inFile = null;
 
+        //File not found
         try {
-            file = new Scanner(new File(inputFile));
+            inFile = new File(inputFile);
+            file = new Scanner(inFile);
         } catch (FileNotFoundException fnfe) {
             System.out.println("File " + inputFile + " not found.");
             System.exit(0);
         }
 
+        System.out.println("Reading from file " + inFile.getAbsolutePath() + "\n");
+
+        //File not formatted correctly.
         try {
             displayInfo(file);
         } catch (IOException e) {
@@ -175,6 +182,7 @@ public class Main {
             System.exit(0);
         }
 
+        //Display program statistics
         endProgram(file, startTime);
     }
     
