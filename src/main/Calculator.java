@@ -4,6 +4,8 @@
  * This is a library file for the Budget-Tools calculator.
  */
 
+ //package main;
+
  public class Calculator {
 
     /**Returns what the amount multiplied by the given percent.

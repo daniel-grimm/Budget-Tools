@@ -4,7 +4,7 @@
  * @version 0.1
  */
 
- package gui;
+ package main.gui;
 
  //imports
  import java.awt.*;
@@ -19,10 +19,6 @@
         final JTextArea text = new JTextArea(10, 40);
         frame.getContentPane().add(BorderLayout.CENTER, text);
         frame.setVisible(true);
-    }
-     
-    public static void main(String[] args) {
-        drawGui(args);
     }
 
  }

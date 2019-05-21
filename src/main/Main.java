@@ -20,11 +20,14 @@
  * @version 0.1
  */
 
+ //package main;
+
 import java.io.File;                    //For file I/O
 import java.io.FileNotFoundException;   //File I/O
 import java.io.IOException;             //File I/O
 import java.util.ArrayList;             //Flexible data
 import java.util.Scanner;               //For reading in from files
+import gui.*;                           //Make this program into a gui
 
 public class Main {
 
