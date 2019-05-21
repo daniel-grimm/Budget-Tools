@@ -2,5 +2,5 @@ Design Ideas
 Create a Build File which will automatically increment the version number of the system.
 Alternatively, get Jenkins or Maven or some build system working that will update it for me.
 
-Display the absolute path of the input txt file
-
+Add a gui that displays the information graphically and allows the user to edit the values in
+the text file.
