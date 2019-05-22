@@ -185,6 +185,8 @@ public class Main {
             System.exit(0);
         }
 
+        Home.drawGui(args);
+
         //Display program statistics
         endProgram(file, startTime);
     }

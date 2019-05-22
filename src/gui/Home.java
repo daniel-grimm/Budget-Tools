@@ -4,7 +4,7 @@
  * @version 0.1
  */
 
- package main.gui;
+ package gui;
 
  //imports
  import java.awt.*;
@@ -19,6 +19,7 @@
         final JTextArea text = new JTextArea(10, 40);
         frame.getContentPane().add(BorderLayout.CENTER, text);
         frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
  }
