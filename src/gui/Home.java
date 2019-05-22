@@ -4,7 +4,7 @@
  * @version 0.1
  */
 
- package gui;
+package src.gui;
 
  //imports
  import java.awt.*;
