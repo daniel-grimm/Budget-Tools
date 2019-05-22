@@ -4,7 +4,7 @@
  * This is a library file for the Budget-Tools calculator.
  */
 
- //package main;
+ package lib;
 
  public class Calculator {
 
