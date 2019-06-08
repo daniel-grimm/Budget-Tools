@@ -15,15 +15,14 @@
 
     public static JTextArea text = new JTextArea(INIT_LENGTH, INIT_WIDTH);
     private static JFrame frame = new JFrame("Budget");
+    private static String output = "Hello World";
 
     //Pass in the file as a string or as a file?
     private static void initializeGui(String[] args) {
-        //JFrame frame = new JFrame("Budget");
         frame.setSize(INIT_LENGTH, INIT_WIDTH);
         frame.setLocation(300, 200);
-        final JTextArea title = new JTextArea(INIT_LENGTH, INIT_WIDTH);
-        title.append("Hello World");
-        frame.getContentPane().add(BorderLayout.CENTER, title);
+        text.append(output);
+        frame.getContentPane().add(BorderLayout.CENTER, text);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
@@ -31,8 +30,10 @@
     /**This method updates the gui with the new information.
      * 
      */
-    public static void updateGui() {
-        frame.update(frame.getGraphics());
+    public static void updateOutput(String append) {
+        text = new JTextArea(INIT_LENGTH, INIT_WIDTH);
+        text.append("\n" + append);
+        //frame.update(frame.getGraphics());
     }
 
     /**This method draws the gui displaying the output of the program.
