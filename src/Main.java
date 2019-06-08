@@ -87,6 +87,8 @@ public class Main {
 
         System.out.println("Reading from file " + inFile.getAbsolutePath() + "\n");
 
+        Home.drawGui(args);
+
         //File not formatted correctly.
         try {
             Bios.displayInfo(file);
@@ -94,8 +96,6 @@ public class Main {
             System.out.println("Bad input.");
             System.exit(0);
         }
-
-        Home.drawGui(args);
 
         //Display program statistics
         endProgram(file, startTime);

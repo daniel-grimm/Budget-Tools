@@ -100,6 +100,8 @@ import java.util.Scanner;               //For reading in from files
         //Subtract everything that is not a percent deduction
         for (int i = 4; i < expenses.size(); i++) {
             System.out.println(expenses.get(i) + ": $" + cost.get(i));
+            Home.text.append("\n" + expenses.get(i) + ": $" + cost.get(i));
+            Home.updateGui();
             System.out.print("\t$" + total + " - $" + cost.get(i));
             total -= cost.get(i);
             System.out.println(" = $" + total + "\n");
