@@ -11,10 +11,12 @@ import java.util.ArrayList;             //Flexible data
 import java.util.Scanner;               //For reading in from files
 
  public class Bios {
+
     /**Prints the contents of the file and expenses to the console
      * 
      * @param file
      */
+    @SuppressWarnings( "deprecation" )
     public static void displayInfo(Scanner file) throws IOException {
         ArrayList<String> expenses = new ArrayList<String>();   //Title of each expense
         ArrayList<Double> costs = new ArrayList<Double>();      //Cost of each expense (Cost per month)

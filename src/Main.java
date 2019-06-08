@@ -27,6 +27,10 @@ import java.util.Scanner;               //For reading in from files
 
 public class Main {
 
+    /**Closes the system resources and prints runtime information
+     * 
+     * @param startTime
+     */
     private static void endProgram(long startTime) {
         long endTime = System.currentTimeMillis();
         long runtime = endTime - startTime;

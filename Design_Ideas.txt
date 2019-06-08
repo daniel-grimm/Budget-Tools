@@ -4,3 +4,5 @@ Alternatively, get Jenkins or Maven or some build system working that will updat
 
 Add a gui that displays the information graphically and allows the user to edit the values in
 the text file.
+
+Change the BIOS file to generate output but not display the output.
