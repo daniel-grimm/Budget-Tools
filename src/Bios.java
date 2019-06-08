@@ -4,14 +4,11 @@
  * @version 0.0
  */
 
-package src.cli;
-
 import java.io.File;                    //For file I/O
 import java.io.FileNotFoundException;   //File I/O
 import java.io.IOException;             //File I/O
 import java.util.ArrayList;             //Flexible data
 import java.util.Scanner;               //For reading in from files
-import static lib.Calculator;
 
  public class Bios {
     /**Prints the contents of the file and expenses to the console
@@ -44,7 +41,7 @@ import static lib.Calculator;
      */
     private static double printPercents(String expense, double percent, double grossIncome, double total) {
         System.out.println(expense + ": " + percent + "%");
-        double minusValue = lib.Calculator.percentOf(grossIncome, percent);
+        double minusValue = Calculator.percentOf(grossIncome, percent);
         System.out.print("\t$" + total + " - $" + minusValue);
         total -= minusValue;
         System.out.println(" = $" + total + "\n");

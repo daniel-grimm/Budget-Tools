@@ -4,17 +4,20 @@
  * @version 0.1
  */
 
-package src.gui;
-
  //imports
  import java.awt.*;
  import javax.swing.*;
 
  public class Home {
 
+    //Pass in the file as a string or as a file?
+    public static void initializeGui() {
+
+    }
+
     public static void drawGui(String[] args) {
-        JFrame frame = new JFrame("Home");
-        frame.setSize(250, 250);
+        JFrame frame = new JFrame("Budget");
+        frame.setSize(500, 500);
         frame.setLocation(300, 200);
         final JTextArea text = new JTextArea(10, 40);
         frame.getContentPane().add(BorderLayout.CENTER, text);

@@ -20,16 +20,19 @@
  * @version 0.1
  */
 
- package src;
-
 import java.io.File;                    //For file I/O
 import java.io.FileNotFoundException;   //File I/O
 import java.io.IOException;             //File I/O
 import java.util.Scanner;               //For reading in from files
-import gui.*;                           //Make this program into a gui
-import cli.*;                           //CLI output of the program
 
 public class Main {
+
+    private static void endProgram(long startTime) {
+        long endTime = System.currentTimeMillis();
+        long runtime = endTime - startTime;
+        //runtime /= 1000; //Convert to seconds
+        System.out.println("\nRun time: " + runtime + " milliseconds");
+    }
 
     /**Closes sytem resources and prints runtime information.
      * 
@@ -74,6 +77,7 @@ public class Main {
             file = new Scanner(inFile);
         } catch (FileNotFoundException fnfe) {
             System.out.println("File " + inputFile + " not found.");
+            endProgram(startTime);
             System.exit(0);
         }
 
