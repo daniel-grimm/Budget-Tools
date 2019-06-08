@@ -11,10 +11,12 @@ import java.util.ArrayList;             //Flexible data
 import java.util.Scanner;               //For reading in from files
 
  public class Bios {
+
     /**Prints the contents of the file and expenses to the console
      * 
      * @param file
      */
+    @SuppressWarnings( "deprecation" )
     public static void displayInfo(Scanner file) throws IOException {
         ArrayList<String> expenses = new ArrayList<String>();   //Title of each expense
         ArrayList<Double> costs = new ArrayList<Double>();      //Cost of each expense (Cost per month)
@@ -98,6 +100,8 @@ import java.util.Scanner;               //For reading in from files
         //Subtract everything that is not a percent deduction
         for (int i = 4; i < expenses.size(); i++) {
             System.out.println(expenses.get(i) + ": $" + cost.get(i));
+            Home.text.append("\n" + expenses.get(i) + ": $" + cost.get(i));
+            Home.updateGui();
             System.out.print("\t$" + total + " - $" + cost.get(i));
             total -= cost.get(i);
             System.out.println(" = $" + total + "\n");

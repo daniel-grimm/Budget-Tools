@@ -27,6 +27,10 @@ import java.util.Scanner;               //For reading in from files
 
 public class Main {
 
+    /**Closes the system resources and prints runtime information
+     * 
+     * @param startTime
+     */
     private static void endProgram(long startTime) {
         long endTime = System.currentTimeMillis();
         long runtime = endTime - startTime;
@@ -83,6 +87,8 @@ public class Main {
 
         System.out.println("Reading from file " + inFile.getAbsolutePath() + "\n");
 
+        Home.drawGui(args);
+
         //File not formatted correctly.
         try {
             Bios.displayInfo(file);
@@ -90,8 +96,6 @@ public class Main {
             System.out.println("Bad input.");
             System.exit(0);
         }
-
-        Home.drawGui(args);
 
         //Display program statistics
         endProgram(file, startTime);
