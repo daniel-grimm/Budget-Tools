@@ -19,6 +19,7 @@
 
     //Pass in the file as a string or as a file?
     private static void initializeGui(String[] args) {
+        frame.setLayout(new GridLayout());
         frame.setSize(INIT_LENGTH, INIT_WIDTH);
         frame.setLocation(300, 200);
         text.append(output);
@@ -33,7 +34,6 @@
     public static void updateOutput(String append) {
         text = new JTextArea(INIT_LENGTH, INIT_WIDTH);
         text.append("\n" + append);
-        //frame.update(frame.getGraphics());
     }
 
     /**This method draws the gui displaying the output of the program.
