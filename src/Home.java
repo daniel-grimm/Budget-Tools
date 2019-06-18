@@ -6,10 +6,13 @@
 
  //imports
  import java.awt.*;
+ import java.applet.Applet;
  import javax.swing.*;
 
- public class Home {
+ @SuppressWarnings("deprecation")
+ public class Home extends Applet {
 
+    private static final long serialVersionUID = 1L;
     private static final int INIT_LENGTH = 500;
     private static final int INIT_WIDTH = 500;
 
@@ -18,12 +21,12 @@
     private static String output = "Hello World";
 
     //Pass in the file as a string or as a file?
-    private static void initializeGui(String[] args) {
-        frame.setLayout(new GridLayout());
+    private void initializeGui(String[] args) {
+        frame.setLayout(new GridLayout(1, 2));
         frame.setSize(INIT_LENGTH, INIT_WIDTH);
         frame.setLocation(300, 200);
         text.append(output);
-        frame.getContentPane().add(BorderLayout.CENTER, text);
+        //frame.getContentPane().add(BorderLayout.CENTER, text);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
@@ -31,7 +34,7 @@
     /**This method updates the gui with the new information.
      * 
      */
-    public static void updateOutput(String append) {
+    public void updateOutput(String append) {
         text = new JTextArea(INIT_LENGTH, INIT_WIDTH);
         text.append("\n" + append);
     }
@@ -40,7 +43,7 @@
      * 
      * @param args
      */
-    public static void drawGui(String[] args) {
+    public void drawGui(String[] args) {
         initializeGui(args);
     }
 

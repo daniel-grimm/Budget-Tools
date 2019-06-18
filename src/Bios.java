@@ -101,7 +101,7 @@ import java.util.Scanner;               //For reading in from files
         for (int i = 4; i < expenses.size(); i++) {
             System.out.println(expenses.get(i) + ": $" + cost.get(i));
             Home.text.append("\n" + expenses.get(i) + ": $" + cost.get(i));
-            Home.updateOutput(expenses.get(i) + ": $" + cost.get(i));
+            //Home.updateOutput(expenses.get(i) + ": $" + cost.get(i));
             System.out.print("\t$" + total + " - $" + cost.get(i));
             total -= cost.get(i);
             System.out.println(" = $" + total + "\n");
