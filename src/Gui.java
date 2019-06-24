@@ -8,7 +8,15 @@
  import java.io.IOException;
 
 class Gui {
-    public static void drawResults(File file) {
+
+
+    private File outputFile = new File("output.html");
+
+    public void writeResultToFile(String input) {
+        
+    }
+
+    public void drawResults(File file) {
         Runtime displayResults = Runtime.getRuntime();
         try {
             Process exec = displayResults.exec("firefox " + file.getAbsolutePath());

@@ -87,7 +87,8 @@ public class Main {
 
         System.out.println("Reading from file " + inFile.getAbsolutePath() + "\n");
 
-        Gui.drawResults(inFile);
+	Gui gui = new Gui();
+        gui.drawResults(inFile);
 
         //File not formatted correctly.
         try {
