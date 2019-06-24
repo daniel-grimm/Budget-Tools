@@ -7,7 +7,7 @@
  import java.io.File;
  import java.io.IOException;
 
-class Home {
+class Gui {
     public static void drawResults(File file) {
         Runtime displayResults = Runtime.getRuntime();
         try {
