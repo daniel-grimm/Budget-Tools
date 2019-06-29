@@ -12,8 +12,13 @@ class Gui {
 
     private File outputFile = new File("output.html");
 
+    private void endHTMLFile() {
+        
+    }
+
     public void writeResultToFile(String input) {
         
+
     }
 
     public void drawResults(File file) {
