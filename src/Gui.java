@@ -7,8 +7,21 @@
  import java.io.File;
  import java.io.IOException;
 
-class Home {
-    public static void drawResults(File file) {
+class Gui {
+
+
+    private File outputFile = new File("output.html");
+
+    private void endHTMLFile() {
+        
+    }
+
+    public void writeResultToFile(String input) {
+        
+
+    }
+
+    public void drawResults(File file) {
         Runtime displayResults = Runtime.getRuntime();
         try {
             Process exec = displayResults.exec("firefox " + file.getAbsolutePath());

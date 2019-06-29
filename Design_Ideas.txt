@@ -1,8 +1,4 @@
-Design Ideas
-Create a Build File which will automatically increment the version number of the system.
-Alternatively, get Jenkins or Maven or some build system working that will update it for me.
+Create an HTML frontend that can be viewed in a webpage.
 
-Add a gui that displays the information graphically and allows the user to edit the values in
-the text file.
+Download and learn Maven
 
-Change the BIOS file to generate output but not display the output.
