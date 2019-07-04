@@ -1,3 +1,5 @@
+package com.dgrimm.app;
+
 /**This class draws the gui version of the budget tool.
  * 
  * @author Daniel Grimm
@@ -7,7 +9,7 @@
  import java.io.File;
  import java.io.IOException;
 
-class Gui {
+class SaveToHTML {
 
 
     private File outputFile = new File("output.html");

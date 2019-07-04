@@ -1,10 +1,12 @@
+package com.dgrimm.app;
+
 /**@author Daniel Grimm
  * @version 0.0
  * 
  * This is a library file for the Budget-Tools calculator.
  */
 
- public class Calculator {
+ public class Calc {
 
     /**Returns what the amount multiplied by the given percent.
      * @param amount : The amount to be multiplied by

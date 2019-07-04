@@ -1,3 +1,5 @@
+package com.dgrimm.app;
+
 /**Automatically creates a budget from an input file.
  * 
  * This program accepts a txt file as a data input. The file is expected to have to
@@ -62,10 +64,12 @@ public class Main {
 
         //Get the input text file
         String inputFile = null;
+        String outputFile = null;
         
         //No file
         try {
             inputFile = args[0];
+            outputFile = args[1];
         } catch (Exception e) {
             System.out.println("No file provided, program exiting.");
             System.exit(0);
@@ -87,9 +91,6 @@ public class Main {
 
         System.out.println("Reading from file " + inFile.getAbsolutePath() + "\n");
 
-	Gui gui = new Gui();
-        gui.drawResults(inFile);
-
         //File not formatted correctly.
         try {
             Bios.displayInfo(file);
@@ -97,6 +98,10 @@ public class Main {
             System.out.println("Bad input.");
             System.exit(0);
         }
+
+        /** ---------------- Run Output in Firefox ------------------ */
+        //Runtime cmd = new Runtime();
+        //cmd.exec("firefox " + outputFile);
 
         //Display program statistics
         endProgram(file, startTime);

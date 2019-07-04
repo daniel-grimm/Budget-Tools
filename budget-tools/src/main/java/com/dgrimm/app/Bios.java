@@ -1,11 +1,13 @@
+package com.dgrimm.app;
+
 /**This class contains the cli format of the Budget Tools program.
  * 
  * @since May 21st, 2019
  * @version 0.0
  */
 
-import java.io.File;                    //For file I/O
-import java.io.FileNotFoundException;   //File I/O
+//import java.io.File;                    //For file I/O
+//import java.io.FileNotFoundException;   //File I/O
 import java.io.IOException;             //File I/O
 import java.util.ArrayList;             //Flexible data
 import java.util.Scanner;               //For reading in from files
@@ -43,7 +45,7 @@ import java.util.Scanner;               //For reading in from files
      */
     private static double printPercents(String expense, double percent, double grossIncome, double total) {
         System.out.println(expense + ": " + percent + "%");
-        double minusValue = Calculator.percentOf(grossIncome, percent);
+        double minusValue = Calc.percentOf(grossIncome, percent);
         System.out.print("\t$" + total + " - $" + minusValue);
         total -= minusValue;
         System.out.println(" = $" + total + "\n");
