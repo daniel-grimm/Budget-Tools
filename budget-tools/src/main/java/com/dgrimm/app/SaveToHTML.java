@@ -11,8 +11,11 @@ package com.dgrimm.app;
 
 class SaveToHTML {
 
+    private File outputFile = new File("budget.html");
 
-    private File outputFile = new File("output.html");
+    private void startFile() {
+        
+    }
 
     private void endHTMLFile() {
         

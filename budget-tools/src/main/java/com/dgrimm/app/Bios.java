@@ -6,8 +6,6 @@ package com.dgrimm.app;
  * @version 0.0
  */
 
-//import java.io.File;                    //For file I/O
-//import java.io.FileNotFoundException;   //File I/O
 import java.io.IOException;             //File I/O
 import java.util.ArrayList;             //Flexible data
 import java.util.Scanner;               //For reading in from files
