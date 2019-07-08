@@ -3,7 +3,6 @@ package com.dgrimm.app;
 /**This class contains the cli format of the Budget Tools program.
  * 
  * @since May 21st, 2019
- * @version 0.0
  */
 
 import java.io.IOException;             //File I/O

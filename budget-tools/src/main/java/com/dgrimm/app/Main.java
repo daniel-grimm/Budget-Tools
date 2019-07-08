@@ -19,12 +19,12 @@ package com.dgrimm.app;
  * one-off purchases at the bottom
  * 
  * @author Daniel Grimm
- * @version 0.1
  */
 
 import java.io.File;                    //For file I/O
 import java.io.FileNotFoundException;   //File I/O
 import java.io.IOException;             //File I/O
+import java.net.URI;                    //For getting file from the Internet
 import java.util.Scanner;               //For reading in from files
 
 public class Main {
@@ -63,13 +63,11 @@ public class Main {
         long startTime = System.currentTimeMillis();
 
         //Get the input text file
-        String inputFile = null;
-        String outputFile = null;
+        URI inputFile = null;
         
         //No file
         try {
-            inputFile = args[0];
-            outputFile = args[1];
+            inputFile = new URI("https://github.com/daniel-grimm/Budget-Tools/input.txt");
         } catch (Exception e) {
             System.out.println("No file provided, program exiting.");
             System.exit(0);

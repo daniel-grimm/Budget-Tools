@@ -1,35 +1,73 @@
 package com.dgrimm.app;
 
-/**This class draws the gui version of the budget tool.
+/**This class saves the output of the program to an HTML file and
+ * displays it in Firefox.
  * 
  * @author Daniel Grimm
- * @version 0.1
  */
 
+ //imports
  import java.io.File;
+ import java.io.FileNotFoundException;
  import java.io.IOException;
+ import java.io.PrintWriter;
+ import java.io.UnsupportedEncodingException;
 
 class SaveToHTML {
 
-    private File outputFile = new File("budget.html");
+    // The output file for the program
+    private static File outputFile = new File("budget.html");
 
-    private void startFile() {
-        
+    /**This method writes data to an output file.
+     * 
+     * @param name
+     * @param data
+     */
+    public static void writeData(String name, String data, String result) {
+        PrintWriter pw = null;
+        try {
+            pw = new PrintWriter(outputFile, "UTF-8");
+            pw.println("    <tr>");
+            pw.println("      <td>" + name + "</td>");
+            pw.println("      <td>" + data + "</td>");
+            pw.println("    </tr>");
+            pw.println("    <tr colspan=\"2\">" + result + "</tr>");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        pw.close();
     }
 
-    private void endHTMLFile() {
-        
+    /**
+     * 
+     */
+    private static void endFile() {
+        PrintWriter pw = null;
+        try {
+            pw = new PrintWriter(outputFile, "UTF-8");
+            pw.println("  </table>");
+            pw.println("</body>");
+            pw.println("</html>");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        pw.close();
     }
 
-    public void writeResultToFile(String input) {
-        
-
-    }
-
-    public void drawResults(File file) {
+    /**
+     * 
+     */
+    public static void drawResults() {
+        endFile();
         Runtime displayResults = Runtime.getRuntime();
         try {
-            Process exec = displayResults.exec("firefox " + file.getAbsolutePath());
+            Process exec = displayResults.exec("firefox " + outputFile.getAbsolutePath());
+            exec.pid();
         } catch(IOException ioe) {
             System.err.println("Unknown error. Exiting.");
             System.exit(1);

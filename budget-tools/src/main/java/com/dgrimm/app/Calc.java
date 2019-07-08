@@ -1,7 +1,6 @@
 package com.dgrimm.app;
 
 /**@author Daniel Grimm
- * @version 0.0
  * 
  * This is a library file for the Budget-Tools calculator.
  */
