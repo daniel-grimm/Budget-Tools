@@ -1,4 +1,1 @@
-Create an HTML frontend that can be viewed in a webpage.
-
-Download and learn Maven
-
+Create the ability to have an online input file.

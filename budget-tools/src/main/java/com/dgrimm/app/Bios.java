@@ -99,17 +99,12 @@ import java.util.Scanner;               //For reading in from files
         //Subtract everything that is not a percent deduction
         for (int i = 4; i < expenses.size(); i++) {
             System.out.println(expenses.get(i) + ": $" + cost.get(i));
-            //Home.text.append("\n" + expenses.get(i) + ": $" + cost.get(i));
-            //Home.updateOutput(expenses.get(i) + ": $" + cost.get(i));
             System.out.print("\t$" + total + " - $" + cost.get(i));
             total -= cost.get(i);
             System.out.println(" = $" + total + "\n");
         }
 
         finalOutput(grossIncome, total);
-        //Print out meta statistics
-        // System.out.println("Extra money: $" + total + "\n");
-        // System.out.println("Total expenses: $" + Math.round(grossIncome - total) + "\n");
     }
     
  }

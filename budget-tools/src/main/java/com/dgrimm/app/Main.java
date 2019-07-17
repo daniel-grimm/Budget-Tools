@@ -22,7 +22,7 @@ package com.dgrimm.app;
  */
 
 import java.io.File;                    //For file I/O
-import java.io.FileNotFoundException;   //File I/O
+//import java.io.FileNotFoundException;   //File I/O
 import java.io.IOException;             //File I/O
 import java.net.URI;                    //For getting file from the Internet
 import java.util.Scanner;               //For reading in from files
@@ -54,6 +54,13 @@ public class Main {
         System.out.println("\nRun time: " + runtime + " milliseconds");
     }
 
+    private static File promptInputFile() {
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("Where is your input file located?");
+        String input = userInput.nextLine();
+        return new File("");
+    }
+
     /**Runs the main program.
      * 
      * @param args
@@ -62,32 +69,18 @@ public class Main {
         //Timer
         long startTime = System.currentTimeMillis();
 
-        //Get the input text file
-        URI inputFile = null;
-        
-        //No file
-        try {
-            inputFile = new URI("https://github.com/daniel-grimm/Budget-Tools/input.txt");
-        } catch (Exception e) {
-            System.out.println("No file provided, program exiting.");
-            System.exit(0);
-        }
+        File input = promptInputFile();
 
-        //initialize variables for later
         Scanner file = null;
-        File inFile = null;
 
         //File not found
         try {
-            inFile = new File(inputFile);
-            file = new Scanner(inFile);
-        } catch (FileNotFoundException fnfe) {
-            System.out.println("File " + inputFile + " not found.");
+            file = new Scanner(input);
+        } catch (Exception e) {
+            System.out.println("File " + file + " not found.");
             endProgram(startTime);
             System.exit(0);
         }
-
-        System.out.println("Reading from file " + inFile.getAbsolutePath() + "\n");
 
         //File not formatted correctly.
         try {
