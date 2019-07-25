@@ -6,7 +6,7 @@
 
   <groupId>com.dgrimm.app</groupId>
   <artifactId>budget-tools</artifactId>
-  <version>0.5</version>
+  <version>0.6</version>
 
   <name>budget-tools</name>
   <url>http://www.github.com/daniel-grimm/budget-tools</url>
@@ -48,6 +48,13 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
+          <configuration>
+              <archive>
+                <manifest>
+                  <mainClass>com.dgrimm.app.Main</mainClass>
+                </manifest>
+              </archive>
+            </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>

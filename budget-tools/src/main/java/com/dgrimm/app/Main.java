@@ -7,6 +7,7 @@ import java.io.IOException;
 class Main {
 
     public static void main(String[] args) {
+        System.out.println("Hello World!");
         Runtime rt = Runtime.getRuntime();
         try {
             Process pr = rt.exec("firefox  ../stylesheets/welcome.html");
